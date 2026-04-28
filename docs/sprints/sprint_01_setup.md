@@ -88,6 +88,40 @@ export default function ProductCard() {
 }
 ```
 ---
+```mermaid
+erDiagram
+    USER ||--o{ ORDER : "places"
+    ORDER ||--|{ ORDER_ITEM : "contains"
+    PRODUCT ||--o{ ORDER_ITEM : "included_in"
+
+    USER {
+    int id PK
+    string username 
+    string email
+    }
+
+    ORDER {
+        int id PK 
+        int user_id FK
+        datetime order_date
+        string status
+    }
+
+    ORDER_ITEM {
+        int id PK
+        int order_id FK
+        int product_id FK
+        int quantity
+        decimal price
+    }
+
+    PRODUCT {
+        int id PK
+        string name
+        decimal stock_price
+    }
+```
+---
 # Retrospectiveとは？
 スプリントの最後に行う振り返り
 ## 📝 書く内容（3つだけ）
