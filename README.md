@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -34,3 +35,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+=======
+# new-EC-platform
+Instagram風UIの動的ECプラットフォーム開発
+| 技術 | 費用 | 特徴・採用理由 |
+| :--- | :--- | :--- |
+| **Next.js** | 基本無料 | Reactベースの標準フレームワーク。 |
+| **Tailwind CSS** | 基本無料 | インライン記述、CSSファイルを分けない。 |
+| **Marmaid** | 基本無料 | DBML(テキスト形式)設計。VS Codeと連携してER図を自動描画できるらしい。 |
+| **Supabase** | 基本無料 | 認証・DB・ストレージがセット。億単位のデータ拡張性あり。⇐項目の作成機能を作るなら後々レコードが万～億単位になるから、どうDBをスケーラブルするか考えないといけないね。。。インスタは最初1つのRDBでやってたけど、すぐあきらめて分散DBにかえたらしい。今は考えなくてよいけど、IDだけはUUIDにしておくべき |
+>>>>>>> 9d69638c5606b1f2e2306410c58f0582f6f2d71d
