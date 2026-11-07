@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 960">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB88C"/><stop offset="1" stop-color="#7BC67E"/></linearGradient></defs>
+<rect width="540" height="960" fill="url(#s)"/>
+<ellipse cx="270" cy="900" rx="420" ry="220" fill="#000" opacity="0.12"/>
+<text x="140" y="300" font-size="110" text-anchor="middle" dominant-baseline="middle" opacity="0.8">🌄</text>
+<text x="270" y="520" font-size="260" text-anchor="middle" dominant-baseline="middle">🌱</text>
+</svg>

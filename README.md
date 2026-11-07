@@ -1,47 +1,80 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌱 Hatake — a P2P marketplace for local farmers
 
-## Getting Started
+**Fresh food, straight from your neighbours.**
 
-First, run the development server:
+Hatake (畑, *"field"* in Japanese) is a peer-to-peer marketplace where small, local producers —
+family farms, beekeepers, home gardeners and bakers — sell **directly** to people nearby,
+with an Instagram-style interface (Reels, Threads, profile shops).
+
+> ⚠️ This is a **front-end prototype**. Data is mocked in memory and resets on reload.
+> The backend (Supabase) is planned — see [`docs/database.md`](docs/database.md).
+
+## Features
+
+- 🎬 **Reels** — full-screen vertical feed of farm videos/photos. Like, comment, and open the attached product. Swipe left to visit the seller's shop.
+- 🧵 **Threads** — community posts tagged *Harvest*, *Question*, *Event* or *Tips*, with filters and replies.
+- 🧺 **Profile shops** — every user (peer) has a shop on their profile (`/mypage`, `/sellers/[username]`).
+- 🤝 **Direct order requests** — choose quantity, pickup or delivery, and send a message. The seller accepts, declines, or marks the order as handed over. No checkout middleman, no fees.
+- ⭐ **Peer trust** — verified badge, rating and review count on every seller.
+- ➕ **Posting** — upload a reel (and attach one of your products), write a thread, or list a new product.
+
+## Tech stack
+
+| | |
+| :--- | :--- |
+| Framework | [Next.js](https://nextjs.org) (App Router) + React + TypeScript |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com) |
+| Gestures | [Framer Motion](https://motion.dev) |
+| Planned backend | [Supabase](https://supabase.com) (Auth, PostgreSQL, Storage) |
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>. The UI is designed for mobile — use your browser's device mode,
+or open the "Network" URL shown in the terminal on your phone.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+src/
+├── app/                      # Pages (App Router)
+│   ├── layout.tsx            # Wraps every page with StoreProvider + BottomNav
+│   ├── page.tsx              # Landing page
+│   ├── reels/                # Feed + /reels/new
+│   ├── threads/              # Feed + /threads/new
+│   ├── mypage/               # Your profile, shop and orders
+│   └── sellers/[username]/   # Other peers' profiles
+├── components/               # UI components (exported from index.ts)
+└── lib/
+    ├── types.ts              # Domain types (UUID ids)
+    ├── config.ts             # App name, currency, current user
+    ├── mockData.ts           # Mock users, products, posts, threads, orders
+    ├── store.tsx             # Shared state — the only file to replace for a real backend
+    └── utils.ts              # Formatting helpers
+docs/
+├── concept.md                # Problem, idea, trust model
+├── database.md               # ER diagram (Mermaid) for Supabase
+└── sprints/                  # One Markdown file per sprint ("Docs as Code")
+```
 
-## Learn More
+## How we work
 
-To learn more about Next.js, take a look at the following resources:
+We follow a lightweight agile process with **Docs as Code**: each sprint has one Markdown file
+in [`docs/sprints/`](docs/sprints) with its goals, tasks and retrospective.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [x] Mockups: Reels, Threads, profiles, posting pages
+- [x] P2P order requests and peer trust badges
+- [ ] Supabase: authentication, database, media storage
+- [ ] Reviews after completed orders → reputation score
+- [ ] "Near me" map / distance filter
+- [ ] Sybil-resistant reputation (research topic, see [`docs/concept.md`](docs/concept.md))
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# new-EC-platform
-Instagram風UIの動的ECプラットフォーム開発
-| 技術 | 費用 | 特徴・採用理由 |
-| :--- | :--- | :--- |
-| **Next.js** | 基本無料 | Reactベースの標準フレームワーク。 |
-| **Tailwind CSS** | 基本無料 | インライン記述、CSSファイルを分けない。 |
-| **Marmaid** | 基本無料 | DBML(テキスト形式)設計。VS Codeと連携してER図を自動描画できるらしい。 |
-| **Supabase** | 基本無料 | 認証・DB・ストレージがセット。億単位のデータ拡張性あり。⇐項目の作成機能を作るなら後々レコードが万～億単位になるから、どうDBをスケーラブルするか考えないといけないね。。。インスタは最初1つのRDBでやってたけど、すぐあきらめて分散DBにかえたらしい。今は考えなくてよいけど、IDだけはUUIDにしておくべき |
->>>>>>> 9d69638c5606b1f2e2306410c58f0582f6f2d71d
+[MIT](LICENSE) © 2026 Misato Kanayama. All illustrations in `public/images` are original.
